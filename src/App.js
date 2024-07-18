@@ -2,10 +2,17 @@ import { useState } from 'react';
 import Banner from './components/Banner/Banner';
 import Formulario from './components/Formulario';
 import Team from './components/Team';
+import Footer from './components/Footer';
 
 function App() {
 
   const teams = [
+    {
+      name: '',
+      primaryColor: null,
+      secondaryColor: null,
+      },
+
     {
     name: 'Programação',
     primaryColor: '#57C278',
@@ -64,7 +71,15 @@ function App() {
       <Formulario teams={teams.map(team => team.name)} registeredContributor={contributor => toNewContributor(contributor)}/>
       
       {/* usando o map para renderizar componentes */}
-      {teams.map(team => <Team key={team.name} title={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor}/>)}
+      {teams.map(team => <Team 
+        key={team.name} 
+        title={team.name} 
+        primaryColor={team.primaryColor} 
+        secondaryColor={team.secondaryColor}
+        collaborators={ contributors.filter(collaborator => collaborator.team === team.name) }
+      />)}
+
+      <Footer />
       
     </div>
   );

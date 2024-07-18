@@ -7,21 +7,25 @@ import { useState } from "react";
 const Formulario = (props) => {
 
   const [name, setName] = useState('');
-  const [cargo, setCargo] = useState('');
-  const [image, setImage] = useState('');
+  const [position, setPosition] = useState('');
+  const [picture, setPicture] = useState('');
   const [team, setTeam] = useState('');
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("Formulário submetido com sucesso")
-   
+  
     props.registeredContributor({
       name,
-      cargo,
-      image,
+      position,
+      picture,
       team,
     })
+
+    setName('');
+    setPosition('');
+    setPicture('');
+    setTeam('');
   }
 
   return (
@@ -40,16 +44,16 @@ const Formulario = (props) => {
         type={ "text" } 
         label={"Cargo:"} 
         placeholder={"Digite seu cargo"} 
-        value={cargo} 
-        setValue={setCargo}
+        value={position} 
+        setValue={setPosition}
         />
 
         <Input
         type={ "text" } 
         label={"Imagem:"}  
         placeholder={"Digite o endereço da imagem"} 
-        value={image} 
-        setValue={setImage}
+        value={picture} 
+        setValue={setPicture}
         />
 
         <Dropdown
