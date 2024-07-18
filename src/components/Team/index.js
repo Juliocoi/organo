@@ -9,7 +9,7 @@ const Team = ({ title, primaryColor, secondaryColor, collaborators  }) => {
       <h3 style={ { borderColor: primaryColor } }>{ title }</h3>
 
       <div className='colaboradores'>
-        {collaborators.map(collaborator => <Colaborator name={collaborator.name} position={collaborator.position} picture={collaborator.picture}/>)}
+        {collaborators.map(collaborator => <Colaborator key={collaborator.name} color={primaryColor} name={collaborator.name} position={collaborator.position} picture={collaborator.picture}/>)}
       </div>
 
     </section>

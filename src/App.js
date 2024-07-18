@@ -7,11 +7,6 @@ import Footer from './components/Footer';
 function App() {
 
   const teams = [
-    {
-      name: '',
-      primaryColor: null,
-      secondaryColor: null,
-      },
 
     {
     name: 'Programação',
@@ -61,7 +56,7 @@ function App() {
   const [contributors, setContributors] = useState([]);
 
   const toNewContributor = (contributor) => {
-    console.log(contributor);
+  
     setContributors([...contributors, contributor])
   }
 
@@ -70,7 +65,7 @@ function App() {
       <Banner />
       <Formulario teams={teams.map(team => team.name)} registeredContributor={contributor => toNewContributor(contributor)}/>
       
-      {/* usando o map para renderizar componentes */}
+      {/* usando o map para renderizar componentes e o filter para separar os cards por categoria */}
       {teams.map(team => <Team 
         key={team.name} 
         title={team.name} 
