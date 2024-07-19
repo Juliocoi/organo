@@ -29,8 +29,8 @@ const Formulario = (props) => {
   }
 
   return (
-    <section className="formulario">
-      <form onSubmit={handleSubmit}>
+    <section className="form-container">
+      <form className="form" onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar um card de colaborador</h2>
         <Input 
           type={ "text" } 
