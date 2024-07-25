@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 function App() {
 
-  const teams = [
+  const [teams, setTeams] = useState([
 
     {
     name: 'Programação',
@@ -51,7 +51,7 @@ function App() {
     secondaryColor: '#FFEEDF'
     },
 
-  ]
+  ])
 
   const inicialData = [
     {
@@ -206,6 +206,15 @@ function App() {
     console.log("nada deletado ainda.")
   }
 
+  function changeTeamColor(color, name){
+    setTeams(teams.map(team => {
+      if(team.name === name){
+        team.primaryColor = color;
+      }
+      return team;
+    }));
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -218,6 +227,7 @@ function App() {
         {teams.map((team, index) => 
           <Team 
             key={index}
+            changeColor={changeTeamColor}
             title={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
