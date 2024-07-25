@@ -202,10 +202,9 @@ function App() {
 
   const [contributors, setContributors] = useState(inicialData);
 
-  // const toNewContributor = (contributor) => {
-  
-  //   setContributors([...contributors, contributor])
-  // }
+  function deleteContributors() {
+    console.log("nada deletado ainda.")
+  }
 
   return (
     <div className="App">
@@ -216,13 +215,16 @@ function App() {
       <section class="teams">
         <h1>Minha organização</h1>
         {/* usando o map para renderizar componentes e o filter para separar os cards por categoria */}
-        {teams.map(team => <Team
-          key={team.name}
-          title={team.name}
-          primaryColor={team.primaryColor}
-          secondaryColor={team.secondaryColor}
-          collaborators={ contributors.filter(collaborator => collaborator.team === team.name) }
-        />)}
+        {teams.map((team, index) => 
+          <Team 
+            key={index}
+            title={team.name}
+            primaryColor={team.primaryColor}
+            secondaryColor={team.secondaryColor}
+            collaborators={ contributors.filter(collaborator => collaborator.team === team.name) }
+            deleteColaborator={deleteContributors}
+          />
+        )}
       </section>
 
       <Footer />
