@@ -227,8 +227,8 @@ function App() {
 
   const [contributors, setContributors] = useState(inicialData);
 
-  function deleteContributors() {
-    console.log("nada deletado ainda.")
+  function deleteContributors(id) {
+    setContributors(contributors.filter(contributor => contributor.id !== id))
   }
 
   function changeTeamColor(color, id){
