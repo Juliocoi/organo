@@ -2,12 +2,12 @@ import Colaborator from '../Colaborator';
 import './Team.css';
 import hexToRgba from 'hex-to-rgba';
 
-const Team = ({ title, color, collaborators, deleteColaborator, changeColor }) => {
+const Team = ({ id, title, color, collaborators, deleteColaborator, changeColor }) => {
   return (
     // estipulando condição para que times vazios não sejam exibidos
-    collaborators.length > 0 && <section className='team' style={ { backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(color, 0.6)} }>
+    collaborators.length > 0 && <section className='team' style={ { backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(color, '0.6')} }>
 
-      <input onChange={event => changeColor(event.target.value, title) }  value={ color } type='color' className='input-color' />
+      <input onChange={event => changeColor(event.target.value, id) }  value={ color } type='color' className='input-color' />
 
       <h3 style={ { borderColor: color } }>{ title }</h3>
 
