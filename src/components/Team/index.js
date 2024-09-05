@@ -7,7 +7,7 @@ const Team = ({ id, title, color, collaborators, deleteColaborator, changeColor 
     // estipulando condição para que times vazios não sejam exibidos
     collaborators.length > 0 && <section className='team' style={ { backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(color, '0.6')} }>
 
-      <input onChange={event => changeColor(event.target.value, id) }  value={ color } type='color' className='input-color' />
+      <input onChange={event => changeColor(event.target.value, id) }  value={ color } type='color' className='input-team-color' />
 
       <h3 style={ { borderColor: color } }>{ title }</h3>
 

@@ -240,12 +240,19 @@ function App() {
     }));
   }
 
+  function newTeam(newTeam){
+    setTeams([...teams, { ...newTeam, id: uuidv4() }])
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Formulario teams={teams.map(team => team.name)} registeredContributor={contributor => setContributors([...contributors, contributor])}/>
+      <Formulario 
+        teams={teams.map(team => team.name)} registeredContributor={contributor => setContributors([...contributors, contributor])}
+        registerNewTeam={ newTeam }
+      />
       
-      <section class="teams">
+      <section className="teams">
         <h1>Minha organização</h1>
         {/* usando o map para renderizar componentes e o filter para separar os cards por categoria */}
         {teams.map((team, index) => 
@@ -253,7 +260,7 @@ function App() {
             key={index}
             changeColor={changeTeamColor}
             id={team.id}
-            name={team.name}
+            title={team.name}
             color={team.color}
             collaborators={ contributors.filter(collaborator => collaborator.team === team.name) }
             deleteColaborator={deleteContributors}

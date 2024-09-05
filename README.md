@@ -9,8 +9,7 @@ O Organo é uma aplicação web criada para adicionar e exibir equipes.
 * JavaScript;
 * React;
   * React-icons: para utilização de ícones;
-  * [Hex-to-rgba](https://www.npmjs.com/package/hex-to-rgba): Utilizado para alterar a opacidade do plano de fundo dos times utilizando a mesma cor dos cards de colaborador no componente Team;
-
+* [Hex-to-rgba](https://www.npmjs.com/package/hex-to-rgba): Utilizado para alterar a opacidade do plano de fundo dos times utilizando a mesma cor dos cards de colaborador no componente Team;
 * [uuid](https://www.npmjs.com/package/uuid);
 
 ## Como usar

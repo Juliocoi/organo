@@ -3,8 +3,10 @@ import './Input.css'
 
 const Input = ({ type, label, placeholder, value, setValue }) => {
   return (
-    <div className="input">
+    <div className={`input input-${type}`}>
+      
       <label htmlFor={ label }>{ label }</label>
+
       <input type={ type }
         placeholder={ placeholder }
         required
