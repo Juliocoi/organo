@@ -2,7 +2,7 @@ import Colaborator from '../Colaborator';
 import './Team.css';
 import hexToRgba from 'hex-to-rgba';
 
-const Team = ({ id, title, color, collaborators, deleteColaborator, changeColor }) => {
+const Team = ({ id, title, color, collaborators, deleteColaborator, changeColor, atFavorite }) => {
   return (
     // estipulando condição para que times vazios não sejam exibidos
     collaborators.length > 0 && <section className='team' style={ { backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(color, '0.6')} }>
@@ -14,7 +14,19 @@ const Team = ({ id, title, color, collaborators, deleteColaborator, changeColor 
       <div className='colaboradores'>
         {collaborators.map((collaborator, index) => {
 
-          return <Colaborator key={index} id={collaborator.id} color={color} name={collaborator.name} position={collaborator.position} picture={collaborator.picture} atDelete={deleteColaborator}/>
+          return (
+            <Colaborator 
+              key={index} 
+              id={collaborator.id}
+              favorite={collaborator.favorite} 
+              color={color} 
+              name={collaborator.name}
+              position={collaborator.position} 
+              picture={collaborator.picture} 
+              atDelete={deleteColaborator}
+              atFavorite={atFavorite}  
+            />
+          );
         })}
       </div>
     </section>

@@ -11,7 +11,7 @@ const Formulario = ({registeredContributor, teams, registerNewTeam}) => {
   const [picture, setPicture] = useState('');
   const [team, setTeam] = useState('');
   const [teamName, setTeamName] = useState('');
-  const [teamColor, setTeamColor] = useState('');
+  const [teamColor, setTeamColor] = useState('#000000');
 
 
   const onHandleSubmit = (event) => {
