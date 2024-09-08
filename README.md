@@ -1,3 +1,5 @@
+![](https://uploadimage.io/images/2024/09/08/banner.png)
+
 # Organo
 
 Meu primeiro projeto em React, ainda usando JavaScript.
@@ -34,17 +36,40 @@ npm install
 npm start
 ```
 
+## Features
+
+### Cadastrando um novo colaborador
+
 Cadastre um novo membro da equipe:
 
 ![organo](https://i.imgur.com/kDixcsa.png)
 
-Para uma imagem use o link da sua conta do github e adicione um `.png` ao final. Dessa forma:
+Para uma imagem use algum link direto para alguma imagem. Uma boa ideia é usar o link do seu profile no Github e adicione um `.png` ao final. Dessa forma:
 
 ```tex
 https://github.com/juliocoi.png
 ```
 
-![equipes](https://i.imgur.com/20aBGAp.png)
+As equipes serão exibidas no formato abaixo:
 
-Equipes vazias não são exibidas. 
+![equipes](https://uploadimage.io/images/2024/09/08/Equipe.png)
 
+### Criando novo time
+
+Para criar um novo time informe o nome do time e escolha uma cor:
+
+![Novo time](https://uploadimage.io/images/2024/09/08/novotime.png)
+
+Equipes vazias não são exibidas na página. Após criar uma nova equipe [adicione um novo colaborador](#Cadastrando um novo colaborador). A nova equipe já deve estar disponível no menu dropdown do formulário usado para cadastrar colaboradores.
+
+### Alterar a cor da equipe
+
+Para alterar a cor de uma equipe, clique no input de cor localizado no canto superior direito da equipe.
+
+![MudançaDeCor](https://uploadimage.io/images/2024/09/08/1.png)
+
+![MudançaDeCor2](https://uploadimage.io/images/2024/09/08/2.png)
+
+![MudançaDeCor3](https://uploadimage.io/images/2024/09/08/3.png)
+
+Além das features apresentas acima, também é possível excluir e favoritar um colaborador.

@@ -70,13 +70,14 @@ const Formulario = ({registeredContributor, teams, registerNewTeam}) => {
 
       <form className="form" onSubmit={(e) => { 
         e.preventDefault() 
-        registerNewTeam({ name: teamName, color: teamColor })
+        registerNewTeam({ name: teamName, color: teamColor });
+        setTeamName('')
         }}>
         <h2>Preencha os dados para criar um novo time.</h2>
         <Input 
           type="text" 
           label="Nome:" 
-          placeholder="Digite o nomr do time" 
+          placeholder="Digite o nome do time" 
           value={teamName} 
           setValue={ value => setTeamName(value)}
         />
